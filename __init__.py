@@ -77,5 +77,6 @@ async def handle_clear_history(event: MessageEvent):
      
 @clear_allhistory.handle()
 async def handle_clear_allhistory(event: MessageEvent):
+    global session_histories
     session_histories = {}
     await clear_history.send("会话总历史已清除", at_sender=True)
